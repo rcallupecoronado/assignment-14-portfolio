@@ -25,23 +25,23 @@ function App() {
       <div className="App">
       <NavBar />
       
-      <section id="about" style={{ padding: '4rem 2rem' }}>
+      <section id="about" style={{ padding: '4rem 2rem', scrollMarginTop: '120px' }}>
         <About />
       </section>
 
-      <section id="work" style={{ padding: '4rem 2rem' }}>
+      <section id="work" style={{ padding: '4rem 2rem', scrollMarginTop: '10px' }}>
         <Work />
       </section>
 
-      <section id="skills" style={{ padding: '4rem 2rem' }}>
+      <section id="skills" style={{ padding: '4rem 2rem', scrollMarginTop: '120px' }}>
         <Skills />
       </section>
 
-      <section id="resources" style={{ padding: '4rem 2rem' }}>
+      <section id="resources" style={{ padding: '4rem 2rem', scrollMarginTop: '10px' }}>
         <Resources />
       </section>
 
-      <section id="setup" style={{ padding: '4rem 2rem' }}>
+      <section id="setup" style={{ padding: '4rem 2rem', scrollMarginTop: '10px' }}>
         <Setup />
       </section>
     </div>

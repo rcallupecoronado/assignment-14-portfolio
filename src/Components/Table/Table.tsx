@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 interface TableProps {
   headers: string[];
-  rows: (string | number)[][];
+  rows: React.ReactNode[][];
   backgroundColor?: string;
   textColor?: string;
   headerBackgroundColor?: string;

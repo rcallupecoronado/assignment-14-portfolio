@@ -13,12 +13,18 @@ const Skills = () => {
 
   return (
     <section>
-      <h2>🛠 Skills</h2>
+      <h2> Skills</h2>
       <Text
         content="These are the tools and technologies I use regularly to build full stack applications:"
         size="16px"
       />
-      <div style={{ marginTop: '2rem' }}>
+      <div
+        style={{
+          marginTop: '4rem',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
         <Table headers={headers} rows={rows} />
       </div>
     </section>
