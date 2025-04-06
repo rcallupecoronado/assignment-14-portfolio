@@ -1,46 +1,138 @@
-# Getting Started with Create React App
+# 📦 Assignment 14 - Component Library Portfolio
+**Author:** Roger Callupe  
+**Course:** WEBD-3012 - Business Systems Build and Testing  
+**Assignment:** 14 - Component Library  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## Project Description
 
-In the project directory, you can run:
+This is a personal portfolio website built using a **custom UI Component Library** developed in React and TypeScript. The project demonstrates the use of reusable styled components, testing and Docker deployment as part of a full development pipeline.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tools -  Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React + TypeScript (via Create React App)
+- Styled Components
+- Custom reusable UI Components
+- Storybook (Component documentation)
+- Jest + React Testing Library (Automated testing)
+- Husky (Pre-commit hook)
+- Docker + Nginx (Production deployment)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+```
+assignment-14/
+├── callupe_roger_final_site/         # Main CRA project
+│   ├── src/
+│   │   ├── Components/               # Reusable UI Components
+│   │   ├── Sections/                 # Content sections for portfolio
+│   │   │   ├── About.tsx
+│   │   │   ├── Work.tsx
+│   │   │   ├── Skills.tsx
+│   │   │   ├── Resources.tsx
+│   │   │   └── Setup.tsx
+│   │   ├── App.tsx                   # Main layout + navigation
+│   │   └── index.tsx
+│   ├── public/
+│   ├── Dockerfile                    # Docker setup
+│   ├── nginx.conf                    # Nginx config (port 5575)
+│   └── README.md                     # This file
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##  UI Component Library
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+All UI components (Button, Card, Table, etc.) were developed in a separate project and integrated into this CRA site by copying them into the `Components/` folder. The components support:
 
-### `npm run eject`
+- Reusability through props
+- Styled-components for encapsulated styles
+- Unit tests (`.test.tsx`) for validation
+- Storybook stories for documentation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🌐 Portfolio Sections Overview
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+| File                       | Purpose                                                                       |
+|----------------------------|-------------------------------------------------------------------------------|
+| `About.tsx`                | Intro section with name, profile image, and bio using `<Img />` + `<Text />`  |
+| `Work.tsx`                 | Shows featured projects using `<Card />` with title, description, and content |
+| `Skills.tsx`               | Displays tools & technologies using `<Table />`                               |
+| `Resources.tsx`            | Helpful developer links using `<Card />` and clickable links                  |
+| `Setup.tsx`                | Dev environment (VS Code, extensions) using `<Text />` + `<Table />`          |
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+##  How `App.tsx` Works
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The `App.tsx` file handles the full layout of the page:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- It imports and renders the `<NavBar />` for internal navigation.
+- Uses semantic `<section id="...">` wrappers to enable smooth scroll navigation from the navbar.
+- Imports each section (`About`, `Work`, etc.) from the `Sections/` folder and renders them in order.
+
+Example:
+
+```tsx
+<section id="about"><About /></section>
+<section id="work"><Work /></section>
+...
+```
+
+This structure allows the site to function as a **single-page application** with easy-to-read modular layout.
+
+---
+
+## 🐳 Docker Build & Run Instructions
+
+### Step-by-step to build & run the Docker container:
+
+1. **Navigate to project folder**:
+
+```bash
+cd assignment-14/callupe_roger_final_site
+```
+
+2. **Build the Docker image**:
+
+```bash
+docker build -t callupe_roger_coding_assignment14 .
+```
+
+3. **Run the container on port 5575**:
+
+```bash
+docker run -d -p 5575:5575 --name callupe_roger_coding_assignment14 callupe_roger_coding_assignment14
+```
+
+4. **Open in your browser**:
+
+```
+http://localhost:5575
+```
+
+---
+
+## 🐳 Docker Notes
+
+- The Docker image uses a multi-stage build:
+  - Stage 1: Builds the React production app
+  - Stage 2: Serves with Nginx on port `5575`
+- Nginx config is defined in `nginx.conf`
+
+---
+
+## 📂 Final Container Info
+
+- **Image Name:** `callupe_roger_coding_assignment14`
+- **Container Name:** `callupe_roger_coding_assignment14`
+- **Port:** `5575`
+- **URL:** [http://localhost:5575](http://localhost:5575)
+
+---
