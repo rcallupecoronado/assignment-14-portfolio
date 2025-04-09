@@ -4,6 +4,16 @@
 **Assignment:** 14 - Component Library  
 
 ---
+Node.js	v23.6.0	--- OK
+npm	11.0.0 ----- OK
+Docker	27.4.0 ---- OK
+Git	2.48.1.windows.1 ---- OK
+
+
+
+# npx create-react-app assignment-14/callupe_roger_final_site --template typescript
+
+# npm install
 
 ## Project Description
 
@@ -136,3 +146,10 @@ http://localhost:5575
 - **URL:** [http://localhost:5575](http://localhost:5575)
 
 ---
+
+## GIT
+
+- git init
+- git commit -m "Final Assignment 14 Portfolio"
+- git remote add origin https://github.com/rcallupecoronado/assignment-14-portfolio.git
+- git push -u origin main
