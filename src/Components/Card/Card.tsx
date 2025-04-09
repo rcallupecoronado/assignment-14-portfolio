@@ -35,7 +35,7 @@ const Card: React.FC<CardProps> = ({
     >
       <h3>{title}</h3>
       <p>{description}</p>
-      <p>{content}</p>
+      <div>{content}</div>
       {children && <div>{children}</div>}
     </StyledCard>
   );
