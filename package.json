@@ -21,10 +21,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "prepare": "husky install",
-    "test": "react-scripts test --watchAll=false",
     "lint": "eslint ./src"
   },
   "eslintConfig": {
@@ -48,6 +47,6 @@
   "devDependencies": {
     "@storybook/react": "^8.6.12",
     "@types/lodash": "^4.17.16",
-    "husky": "^9.1.7"
+    "husky": "^8.0.0"
   }
 }
